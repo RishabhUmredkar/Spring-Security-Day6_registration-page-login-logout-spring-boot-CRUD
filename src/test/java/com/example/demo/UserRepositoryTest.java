@@ -28,7 +28,7 @@ public class UserRepositoryTest {
 	@Test 
 	public void testCreateUser() {
 		User user = new User();
-		user.setEmail("billu@gmail.com");
+		user.setEmail("abc@gmail.com");
 		user.setPassword("123");
 		user.setFirstName("Rashmi");
 		user.setLastName("Nimje");
@@ -43,7 +43,7 @@ public class UserRepositoryTest {
 	@Test
 	public void testFindUserByEmail()
 	{
-		String email = "rishabhumredkar@gmail.com";
+		String email = "admin@gmail.com";
 		User user = repo.findByEmail(email);
 		
 		assertThat(user).isNotNull();

@@ -55,9 +55,9 @@ public class CustomUserDetailsImpliments implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
-	public String getFullName()
-	{
-		return user.getFirstName()+"    "+user.getLastName();
-		
-	}
+//	public String getFullName()
+//	{
+//		return user.getFirstName()+"    "+user.getLastName();
+//		
+//	}
 }

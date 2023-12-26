@@ -25,7 +25,9 @@
                 <td th:text="${user.email}"></td>
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.lastName}"></td>
-                
+                <td>
+                <a th:href="@{/listUser/update/{id}(id=${user.id})}">Update</a>
+                </td>                
             </tr>
         </tbody>
     </table>

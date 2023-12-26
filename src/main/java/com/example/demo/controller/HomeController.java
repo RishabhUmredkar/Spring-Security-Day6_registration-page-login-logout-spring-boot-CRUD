@@ -37,7 +37,6 @@ public class HomeController {
 	{
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
-		String rawPassword = "abc123";
 		String encodedPassword = encoder.encode(user.getPassword());
 		user.setPassword(encodedPassword);
 		repo.save(user);
