@@ -26,7 +26,11 @@
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td>
-                <a th:href="@{/listUser/update/{id}(id=${user.id})}">Update</a>
+                                            <a th:href="@{'/edit/' + ${user.id}}" class="btn btn-primary">Update</a>
+                
+<a th:href="@{/delete/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+
+
                 </td>                
             </tr>
         </tbody>
