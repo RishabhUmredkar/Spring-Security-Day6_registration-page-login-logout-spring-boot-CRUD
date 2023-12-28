@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -49,13 +50,21 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/list_users")
-	public String viewUserList(Model model)
-	{
-		List<User> listUser = repo.findAll();
-		model.addAttribute("listUser", listUser);
-		return "users";
+	public String viewUserList(Model model) {
+	    // Fetch all users
+	    List<User> allUsers = repo.findAll();
+
+	    // Exclude user with ID 1
+	    List<User> filteredUsers = allUsers.stream()
+	            .filter(user -> user.getId() != 1L)
+	            .collect(Collectors.toList());
+
+	    model.addAttribute("listUser", filteredUsers);
+	    return "users";
 	}
-	
+
+
+
 
 	@GetMapping("/edit/{id}")
 	public String editUser(@PathVariable("id") Long id, Model model) {
